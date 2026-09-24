@@ -1,0 +1,63 @@
+{
+  "name": "L'aromate",
+  "legalName": "Restaurant L'aromate Laval",
+  "tagline": {
+    "fr": "Cuisine méditerranéenne authentique",
+    "en": "Authentic Mediterranean cuisine"
+  },
+  "services": {
+    "fr": ["Brunch", "Lunch", "Dîner"],
+    "en": ["Brunch", "Lunch", "Dinner"]
+  },
+  "cuisine": ["Méditerranéenne", "Tunisienne"],
+  "url": "https://laromate.ca",
+
+  "address": {
+    "street": "270 Boul. de la Concorde O.",
+    "city": "Laval",
+    "region": "QC",
+    "postalCode": "",
+    "country": "CA",
+    "mapsQuery": "270 Boulevard de la Concorde Ouest, Laval, QC"
+  },
+
+  "phones": {
+    "main": { "display": "(450) 967-1111", "tel": "+14509671111" },
+    "brunch": { "display": "514-660-8153", "tel": "+15146608153" }
+  },
+
+  "socials": {
+    "instagram": { "label": "@laromaterestaurant", "url": "https://instagram.com/laromaterestaurant" },
+    "facebook": { "label": "L'aromate Laval", "url": "https://www.facebook.com/search/top?q=L%27aromate%20Laval" }
+  },
+
+  "hoursNote": "PLACEHOLDER — heures inconnues. Remplacez les valeurs ci-dessous puis mettez hoursConfirmed à true.",
+  "hoursConfirmed": false,
+  "hours": [
+    { "day": { "fr": "Lundi", "en": "Monday" },       "schema": "Mo", "open": "", "close": "" },
+    { "day": { "fr": "Mardi", "en": "Tuesday" },      "schema": "Tu", "open": "", "close": "" },
+    { "day": { "fr": "Mercredi", "en": "Wednesday" }, "schema": "We", "open": "", "close": "" },
+    { "day": { "fr": "Jeudi", "en": "Thursday" },     "schema": "Th", "open": "", "close": "" },
+    { "day": { "fr": "Vendredi", "en": "Friday" },    "schema": "Fr", "open": "", "close": "" },
+    { "day": { "fr": "Samedi", "en": "Saturday" },    "schema": "Sa", "open": "", "close": "" },
+    { "day": { "fr": "Dimanche", "en": "Sunday" },    "schema": "Su", "open": "", "close": "" }
+  ],
+
+  "brunch": {
+    "days": { "fr": "Tous les samedis et dimanches", "en": "Every Saturday & Sunday" },
+    "hours": { "fr": "", "en": "" },
+    "price": { "fr": "", "en": "" }
+  },
+
+  "about": {
+    "_comment": "TEXTE À PERSONNALISER — paragraphe temporaire, à remplacer par l'histoire réelle du restaurant.",
+    "fr": [
+      "Chez L'aromate, on cuisine comme à la maison, sur les rives de la Méditerranée. Nos recettes tunisiennes — couscous, ojja, lablebi, grillades — sont préparées chaque jour avec des produits frais, des épices choisies avec soin et beaucoup de générosité.",
+      "Que ce soit pour un brunch en famille le week-end, un lunch entre collègues ou un dîner entre amis, notre équipe vous accueille dans une ambiance chaleureuse où chacun se sent chez soi."
+    ],
+    "en": [
+      "At L'aromate, we cook the way it's done at home on the shores of the Mediterranean. Our Tunisian recipes — couscous, ojja, lablebi, grilled meats and fish — are prepared every day with fresh ingredients, carefully chosen spices and plenty of generosity.",
+      "Whether it's a weekend family brunch, a lunch with colleagues or dinner with friends, our team welcomes you in a warm atmosphere where everyone feels at home."
+    ]
+  }
+}

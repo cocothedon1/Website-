@@ -1,0 +1,121 @@
+@import '@fontsource/allura/latin-400.css';
+@import '@fontsource-variable/cormorant-garamond/wght.css';
+@import '@fontsource-variable/cormorant-garamond/wght-italic.css';
+@import 'tailwindcss';
+
+@theme {
+  --color-cream: #ddd6ca;
+  --color-cream-light: #ebe6dd;
+  --color-sand: #cbc2b2;
+  --color-charcoal: #2a2a28;
+  --color-ink: #3b3a37;
+  --color-ink-soft: #4d4a45;
+  --color-olive: #55632b;
+  --color-olive-dark: #3d4720;
+  --color-olive-light: #8e9b5a;
+  --color-lemon: #e9c64a;
+  --color-lemon-soft: #f3de8c;
+
+  --font-script: 'Allura', 'Brush Script MT', cursive;
+  --font-serif: 'Cormorant Garamond Variable', 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Leave room for the sticky header (and menu chips) when jumping to anchors */
+    scroll-padding-top: 4.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-cream text-ink font-serif antialiased;
+    font-size: 1.1875rem; /* 19px — Cormorant runs small */
+    line-height: 1.6;
+    font-weight: 500;
+    font-optical-sizing: auto;
+    font-variant-numeric: lining-nums;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-olive-dark);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .on-dark :focus-visible {
+    outline-color: var(--color-lemon);
+  }
+
+  ::selection {
+    background: var(--color-lemon-soft);
+    color: var(--color-charcoal);
+  }
+}
+
+@layer components {
+  .script-heading {
+    @apply font-script text-charcoal;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.01em;
+  }
+
+  .kicker {
+    @apply text-olive uppercase;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-[1.05rem] font-semibold tracking-wide transition-colors duration-200;
+    min-height: 48px;
+  }
+  .btn-primary {
+    @apply bg-charcoal text-cream-light hover:bg-olive-dark;
+  }
+  .btn-outline {
+    @apply border border-charcoal/70 text-charcoal hover:bg-charcoal hover:text-cream-light;
+  }
+  .btn-lemon {
+    @apply bg-lemon text-charcoal hover:bg-lemon-soft;
+  }
+
+  /* Hide horizontal scrollbar on the menu chips while keeping them scrollable */
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Subtle scroll fade-ins. Only active when JS runs (html.js) and motion is allowed. */
+@media (prefers-reduced-motion: no-preference) {
+  html.js .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity 0.8s var(--ease-soft),
+      transform 0.8s var(--ease-soft);
+  }
+  html.js .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "_readme": "Texte alternatif (alt) de chaque photo de src/assets/gallery/. La clé est le nom du fichier. Les photos sont affichées par ordre alphabétique du nom de fichier.",
+  "01-couscous.jpg": { "fr": "Couscous à l'agneau servi dans un plat en terre cuite", "en": "Lamb couscous served in a clay dish" },
+  "02-ojja.jpg": { "fr": "Ojja aux œufs dans sa poêle", "en": "Ojja with eggs in its pan" },
+  "03-brunch.jpg": { "fr": "Buffet du brunch à volonté", "en": "The all-you-can-eat brunch buffet" },
+  "04-grillades.jpg": { "fr": "Assiette de grillades et salades tunisiennes", "en": "Grilled meats with Tunisian salads" },
+  "05-salle.jpg": { "fr": "La salle à manger du restaurant", "en": "The restaurant dining room" },
+  "06-pizza.jpg": { "fr": "Pizza sortie du four", "en": "Pizza fresh from the oven" }
+}

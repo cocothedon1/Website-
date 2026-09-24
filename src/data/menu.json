@@ -1,0 +1,459 @@
+{
+  "_readme": "Menu du site. Modifiez les noms, prix et descriptions ici — voir README.md. Prix en dollars (nombre). Le champ \"verify\" est une note interne (jamais affichée) signalant un élément à confirmer.",
+  "categories": [
+    {
+      "id": "entrees",
+      "name": { "fr": "Entrées", "en": "Starters" },
+      "items": [
+        { "name": { "fr": "Soupe du jour", "en": "Soup of the day" }, "price": 6 },
+        { "name": { "fr": "Frites", "en": "Fries" }, "price": 7 },
+        {
+          "name": { "fr": "Fricassé (thon | chevrette | viande hachée)", "en": "Fricassé (tuna | shrimp | ground meat)" },
+          "price": 5,
+          "description": { "fr": "Petit pain tunisien frit et garni", "en": "Small fried Tunisian bun with filling" },
+          "verify": "description ajoutée"
+        },
+        {
+          "name": { "fr": "Moules marinières", "en": "Moules marinières" },
+          "price": 17,
+          "description": { "fr": "", "en": "Mussels steamed in white wine, garlic and herbs" }
+        },
+        {
+          "name": { "fr": "Brick au thon", "en": "Tuna brick" },
+          "price": 7,
+          "description": { "fr": "Feuille de brick croustillante, thon et œuf", "en": "Crispy brick pastry with tuna and egg" },
+          "verify": "description ajoutée"
+        },
+        {
+          "name": { "fr": "Brick viande hachée | chevrette", "en": "Brick — ground meat | shrimp" },
+          "price": 9,
+          "description": { "fr": "", "en": "Crispy brick pastry with your choice of filling" }
+        },
+        {
+          "name": { "fr": "Tajine tunisien", "en": "Tunisian tajine" },
+          "price": 10,
+          "description": { "fr": "Gratin d'œufs et de fromage à la tunisienne", "en": "Tunisian-style baked egg and cheese terrine" },
+          "verify": "description ajoutée"
+        },
+        { "name": { "fr": "Calamars panés", "en": "Breaded calamari" }, "price": 20 }
+      ]
+    },
+    {
+      "id": "salades",
+      "name": { "fr": "Salades", "en": "Salads" },
+      "items": [
+        {
+          "name": { "fr": "Méchouia", "en": "Méchouia" },
+          "price": 10,
+          "description": { "fr": "Poivrons et tomates grillés, ail, huile d'olive", "en": "Grilled peppers and tomatoes, garlic, olive oil" },
+          "verify": "description ajoutée"
+        },
+        {
+          "name": { "fr": "Tunisienne", "en": "Tunisian salad" },
+          "price": 10,
+          "description": { "fr": "Tomates, concombres et oignons en dés", "en": "Diced tomato, cucumber and onion" },
+          "verify": "description ajoutée"
+        },
+        {
+          "name": { "fr": "Omek Houria", "en": "Omek Houria" },
+          "price": 14,
+          "description": { "fr": "Carottes épicées au carvi et à l'harissa", "en": "Spiced carrot salad with caraway and harissa" },
+          "verify": "description ajoutée"
+        },
+        {
+          "name": { "fr": "Trio Salada", "en": "Salad trio" },
+          "price": 11,
+          "description": { "fr": "", "en": "A trio of our Tunisian salads" }
+        },
+        { "name": { "fr": "César", "en": "Caesar" }, "price": 14 },
+        { "name": { "fr": "Grecque", "en": "Greek" }, "price": 13 },
+        { "name": { "fr": "Océane", "en": "Océane (seafood)" }, "price": 18, "verify": "Océane apparaît deux fois sur le menu imprimé (18 $ et 15 $) — à confirmer" },
+        { "name": { "fr": "Océane", "en": "Océane (seafood)" }, "price": 15, "verify": "Doublon — voir ci-dessus" }
+      ]
+    },
+    {
+      "id": "berberes",
+      "name": { "fr": "Plats Berbères", "en": "Berber Plates" },
+      "items": [
+        { "name": { "fr": "Plat tunisien", "en": "Tunisian plate" }, "price": 14 },
+        {
+          "name": { "fr": "Kafteji", "en": "Kafteji" },
+          "description": { "fr": "Légumes frits hachés, œuf et épices", "en": "Chopped fried vegetables with egg and spices" },
+          "verify": "description ajoutée",
+          "prices": [
+            { "label": { "fr": "Régulier", "en": "Regular" }, "price": 16 },
+            { "label": { "fr": "Merguez | Poulet | Kebda", "en": "Merguez | Chicken | Liver" }, "price": 21 },
+            { "label": { "fr": "Mixte", "en": "Mixed" }, "price": 26 }
+          ]
+        },
+        {
+          "name": { "fr": "Mokli", "en": "Mokli" },
+          "prices": [
+            { "label": { "fr": "Régulier", "en": "Regular" }, "price": 14 },
+            { "label": { "fr": "Merguez | Poulet | Kebda", "en": "Merguez | Chicken | Liver" }, "price": 21 },
+            { "label": { "fr": "Mixte", "en": "Mixed" }, "price": 26 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "specialites-tunisiennes",
+      "name": { "fr": "Spécialités tunisiennes", "en": "Tunisian Specialties" },
+      "items": [
+        { "name": { "fr": "Tête d'agneau", "en": "Lamb's head" }, "price": 28 },
+        {
+          "name": { "fr": "Mosli agneau", "en": "Mosli lamb" },
+          "price": 25,
+          "description": { "fr": "Agneau mijoté au four", "en": "Slow oven-braised lamb" },
+          "verify": "description ajoutée"
+        },
+        {
+          "name": { "fr": "Kamounia", "en": "Kamounia" },
+          "price": 23,
+          "description": { "fr": "Ragoût parfumé au cumin", "en": "Cumin-scented stew" },
+          "verify": "description ajoutée"
+        },
+        {
+          "name": { "fr": "Loubia hargma", "en": "Loubia hargma" },
+          "price": 22,
+          "description": { "fr": "Haricots blancs mijotés et pieds de veau", "en": "Slow-cooked white beans with calf's feet" },
+          "verify": "description ajoutée"
+        },
+        {
+          "name": { "fr": "Lablebi hargma", "en": "Lablebi hargma" },
+          "price": 23,
+          "description": { "fr": "Soupe de pois chiches au cumin et pieds de veau", "en": "Cumin chickpea soup with calf's feet" },
+          "verify": "description ajoutée"
+        },
+        {
+          "name": { "fr": "Lablebi thon", "en": "Lablebi with tuna" },
+          "price": 17,
+          "description": { "fr": "Soupe de pois chiches au cumin, thon", "en": "Cumin chickpea soup with tuna" },
+          "verify": "description ajoutée"
+        },
+        {
+          "name": { "fr": "Mloukhiya bœuf", "en": "Mloukhiya with beef" },
+          "price": 26,
+          "description": { "fr": "Bœuf mijoté longuement dans une sauce de corète", "en": "Beef slow-cooked in a rich jute-leaf sauce" },
+          "verify": "description ajoutée"
+        },
+        { "name": { "fr": "Madfouna", "en": "Madfouna" }, "price": 25 }
+      ]
+    },
+    {
+      "id": "ojja",
+      "name": { "fr": "Ojja", "en": "Ojja" },
+      "note": {
+        "fr": "Œufs pochés dans une sauce tomate et poivrons relevée",
+        "en": "Eggs poached in a spicy tomato and pepper sauce"
+      },
+      "items": [
+        { "name": { "fr": "Ojja merguez | poulet", "en": "Ojja — merguez | chicken" }, "price": 19 },
+        { "name": { "fr": "Ojja fruits de mer", "en": "Seafood ojja" }, "price": 26 },
+        { "name": { "fr": "Ojja mixte (merguez et poulet)", "en": "Mixed ojja (merguez and chicken)" }, "price": 22 },
+        { "name": { "fr": "Ojja Carthage (poulpes)", "en": "Ojja Carthage (octopus)" }, "price": 28 }
+      ]
+    },
+    {
+      "id": "couscous",
+      "name": { "fr": "Couscous", "en": "Couscous" },
+      "items": [
+        { "name": { "fr": "Végétarien", "en": "Vegetarian" }, "price": 20 },
+        { "name": { "fr": "Agneau", "en": "Lamb" }, "price": 25 },
+        { "name": { "fr": "Poulet", "en": "Chicken" }, "price": 22 },
+        { "name": { "fr": "Poisson au choix", "en": "Fish of your choice" }, "price": 28 },
+        { "name": { "fr": "Poulpe", "en": "Octopus" }, "price": 29 }
+      ]
+    },
+    {
+      "id": "grillades",
+      "name": { "fr": "Grillades", "en": "Grills" },
+      "note": {
+        "fr": "Servies avec : riz, salade tunisienne, salade méchouia, omek houria et frites",
+        "en": "Served with rice, Tunisian salad, méchouia, omek houria and fries"
+      },
+      "items": [
+        { "name": { "fr": "Poitrine de poulet | Merguez | Kebda", "en": "Chicken breast | Merguez | Liver" }, "price": 24 },
+        { "name": { "fr": "Mixte (poulet, merguez et kebda)", "en": "Mixed grill (chicken, merguez and liver)" }, "price": 27 },
+        { "name": { "fr": "Côtelettes d'agneau", "en": "Lamb chops" }, "price": 32 },
+        { "name": { "fr": "Saumon", "en": "Salmon" }, "price": 35 },
+        { "name": { "fr": "Fruits de mer", "en": "Seafood" }, "price": 35 },
+        { "name": { "fr": "Poissons", "en": "Fish" }, "price": 32 },
+        {
+          "name": { "fr": "Dorade ou loup de mer (450 g à 500 g)", "en": "Sea bream or sea bass (450–500 g)" },
+          "price": null,
+          "priceNote": { "fr": "Prix du marché", "en": "Market price" },
+          "verify": "prix absent du menu imprimé — à confirmer"
+        }
+      ]
+    },
+    {
+      "id": "a-partager",
+      "name": { "fr": "À partager", "en": "To Share" },
+      "note": { "fr": "Spécialités à partager et grandes assiettes", "en": "Sharing specialties and large plates" },
+      "items": [
+        {
+          "name": { "fr": "Plat royale", "en": "Royal platter" },
+          "price": 45,
+          "description": {
+            "fr": "Crevettes, calamar, poisson au choix, moules, chevrettes, frites, salade, makrouna et kafteji",
+            "en": "Prawns, calamari, fish of your choice, mussels, shrimp, fries, salad, makrouna pasta and kafteji"
+          }
+        },
+        {
+          "name": { "fr": "Marmite pêcheur", "en": "Fisherman's pot" },
+          "price": 40,
+          "description": { "fr": "", "en": "Hearty seafood stew" }
+        },
+        {
+          "name": { "fr": "Gurgulette agneau (2 personnes)", "en": "Lamb gargoulette (for 2)" },
+          "price": 65,
+          "description": { "fr": "Agneau cuit lentement en jarre de terre cuite", "en": "Lamb slow-cooked in a sealed clay jar" },
+          "verify": "description ajoutée"
+        },
+        {
+          "name": { "fr": "Gurgulette fruits de mer (2 personnes)", "en": "Seafood gargoulette (for 2)" },
+          "price": 85,
+          "description": { "fr": "Fruits de mer cuits en jarre de terre cuite", "en": "Seafood cooked in a sealed clay jar" },
+          "verify": "description ajoutée"
+        },
+        {
+          "name": { "fr": "Escalope aux champignons", "en": "Escalope with mushrooms" },
+          "price": 27,
+          "description": { "fr": "Sauce blanche et riz", "en": "Cream sauce and rice" }
+        }
+      ]
+    },
+    {
+      "id": "pates",
+      "name": { "fr": "Nos Pâtes", "en": "Our Pasta" },
+      "items": [
+        {
+          "name": { "fr": "Pâtes Puttanesca", "en": "Pasta Puttanesca" },
+          "price": 20,
+          "description": {
+            "fr": "Filet d'anchois, tomate, olives, piment rouge, persil, câpres",
+            "en": "Anchovy fillets, tomato, olives, red chili, parsley, capers"
+          }
+        },
+        {
+          "name": { "fr": "Pâtes Bolognaise", "en": "Pasta Bolognese" },
+          "price": 22,
+          "description": {
+            "fr": "Viande hachée, oignon, ail, sauce tomate, huile d'olive, paprika, persil",
+            "en": "Ground meat, onion, garlic, tomato sauce, olive oil, paprika, parsley"
+          }
+        },
+        {
+          "name": { "fr": "Pâtes Poulet Pesto", "en": "Chicken Pesto Pasta" },
+          "price": 22,
+          "description": {
+            "fr": "Pâtes, poulet, pesto, escalope, mozzarella, noix",
+            "en": "Pasta, chicken, pesto, escalope, mozzarella, walnuts"
+          }
+        },
+        {
+          "name": { "fr": "Pâtes Poulet Rouge", "en": "Chicken Pasta in Red Sauce" },
+          "price": 22,
+          "description": {
+            "fr": "Sauce tomate, portion de poulet, piment vert",
+            "en": "Tomato sauce, chicken, green chili"
+          }
+        },
+        {
+          "name": { "fr": "Pâtes Agneau", "en": "Lamb Pasta" },
+          "price": 22,
+          "description": {
+            "fr": "Sauce tomate, souris d'agneau, piment vert",
+            "en": "Tomato sauce, lamb shank, green chili"
+          }
+        },
+        {
+          "name": { "fr": "Pâtes Fruits de Mer", "en": "Seafood Pasta" },
+          "price": 25,
+          "description": {
+            "fr": "Sauce tomate, crevettes, calamars, moules",
+            "en": "Tomato sauce, prawns, calamari, mussels"
+          }
+        },
+        {
+          "name": { "fr": "Pâtes Alfredo", "en": "Pasta Alfredo" },
+          "price": 20,
+          "description": {
+            "fr": "Sauce blanche, parmesan, poulet, champignons, ail, basilic",
+            "en": "Cream sauce, parmesan, chicken, mushrooms, garlic, basil"
+          }
+        },
+        {
+          "name": { "fr": "Pâtes 4 Fromages", "en": "Four-Cheese Pasta" },
+          "price": 24,
+          "description": {
+            "fr": "Sauce blanche, mozzarella, parmesan, gruyère et roquefort",
+            "en": "Cream sauce, mozzarella, parmesan, gruyère and roquefort"
+          }
+        },
+        {
+          "name": { "fr": "Pâtes au Saumon", "en": "Salmon Pasta" },
+          "price": 25,
+          "description": {
+            "fr": "Crème fraîche, saumon, champignons, herbes fines",
+            "en": "Crème fraîche, salmon, mushrooms, fine herbs"
+          }
+        },
+        {
+          "name": { "fr": "Pâtes Boulettes de Bœuf", "en": "Beef Meatball Pasta" },
+          "price": 20,
+          "description": {
+            "fr": "Boulettes de viande, sauce rouge, sel, ail, huile d'olive, piment vert",
+            "en": "Meatballs, red sauce, salt, garlic, olive oil, green chili"
+          }
+        }
+      ]
+    },
+    {
+      "id": "pizzas",
+      "name": { "fr": "Nos Pizzas", "en": "Our Pizzas" },
+      "items": [
+        {
+          "name": { "fr": "Thon", "en": "Tuna" },
+          "price": 17,
+          "description": {
+            "fr": "Sauce tomate, mozzarella, thon, oignons, olives, tomates cerises, huile d'olive",
+            "en": "Tomato sauce, mozzarella, tuna, onions, olives, cherry tomatoes, olive oil"
+          }
+        },
+        {
+          "name": { "fr": "Pepperoni", "en": "Pepperoni" },
+          "price": 15,
+          "description": {
+            "fr": "Sauce tomate, mozzarella, pepperoni, origan, huile d'olive",
+            "en": "Tomato sauce, mozzarella, pepperoni, oregano, olive oil"
+          }
+        },
+        {
+          "name": { "fr": "Quatre Fromages", "en": "Four Cheese" },
+          "price": 16,
+          "description": {
+            "fr": "Mozzarella, parmesan, cheddar, gorgonzola",
+            "en": "Mozzarella, parmesan, cheddar, gorgonzola"
+          }
+        },
+        {
+          "name": { "fr": "Fruits de Mer", "en": "Seafood" },
+          "price": 25,
+          "description": {
+            "fr": "Crevettes, moules, calamars, mozzarella, persil, huile d'olive",
+            "en": "Prawns, mussels, calamari, mozzarella, parsley, olive oil"
+          }
+        },
+        {
+          "name": { "fr": "Poulet", "en": "Chicken" },
+          "price": 18,
+          "description": {
+            "fr": "Sauce blanche ou tomate, poulet, mozzarella, tomates cerises, basilic, olives noires, champignons",
+            "en": "Cream or tomato sauce, chicken, mozzarella, cherry tomatoes, basil, black olives, mushrooms"
+          }
+        },
+        {
+          "name": { "fr": "Saumon", "en": "Salmon" },
+          "price": 23,
+          "description": {
+            "fr": "Sauce blanche, crème fraîche ou pesto, mozzarella, citron, câpres, huile d'olive",
+            "en": "Cream sauce, crème fraîche or pesto, mozzarella, lemon, capers, olive oil"
+          }
+        },
+        {
+          "name": { "fr": "Burrata", "en": "Burrata" },
+          "price": 32,
+          "description": {
+            "fr": "Sauce tomate ou pesto, mozzarella, tomates cerises, roquette, burrata, basilic, parmesan",
+            "en": "Tomato sauce or pesto, mozzarella, cherry tomatoes, arugula, burrata, basil, parmesan"
+          }
+        },
+        {
+          "name": { "fr": "Chevrettes", "en": "Shrimp" },
+          "price": 23,
+          "description": {
+            "fr": "Sauce blanche, mozzarella, crevettes, tomates cerises, roquette, basilic",
+            "en": "Cream sauce, mozzarella, shrimp, cherry tomatoes, arugula, basil"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sandwichs",
+      "name": { "fr": "Nos Sandwichs", "en": "Our Sandwiches" },
+      "note": {
+        "fr": "Au choix : thon / poulet pané ou grillé / merguez / viande hachée — Trio +5 $",
+        "en": "Your choice of: tuna / breaded or grilled chicken / merguez / ground meat — Make it a combo +5 $"
+      },
+      "items": [
+        {
+          "name": { "fr": "Tacos", "en": "Tacos" },
+          "price": 13,
+          "description": {
+            "fr": "Fromage râpé, sauce fromagère, cheddar fondu, frites, sauce algérienne et harissa",
+            "en": "Shredded cheese, cheese sauce, melted cheddar, fries, Algerian sauce and harissa"
+          }
+        },
+        {
+          "name": { "fr": "Baguette Farcie", "en": "Stuffed Baguette" },
+          "price": 17,
+          "description": {
+            "fr": "Fromage cheddar, fromage râpé, mozzarella, sauce blanche, harissa ou sauce algérienne",
+            "en": "Cheddar, shredded cheese, mozzarella, white sauce, harissa or Algerian sauce"
+          }
+        },
+        {
+          "name": { "fr": "Sandwich Tabouna", "en": "Tabouna Sandwich" },
+          "price": 15,
+          "description": {
+            "fr": "Pain tabouna, salade méchouia, salade tunisienne, laitue, tomates, oignons, harissa, sauce à l'ail et sauce algérienne",
+            "en": "Traditional tabouna bread, méchouia, Tunisian salad, lettuce, tomato, onion, harissa, garlic sauce and Algerian sauce"
+          }
+        },
+        {
+          "name": { "fr": "Sandwich Makloub", "en": "Makloub Sandwich" },
+          "price": 17,
+          "description": {
+            "fr": "Mozzarella, laitue, tomates, oignons, mayonnaise, salade méchouia et harissa",
+            "en": "Folded pizza-dough sandwich with mozzarella, lettuce, tomato, onion, mayonnaise, méchouia and harissa"
+          }
+        },
+        {
+          "name": { "fr": "Chapati", "en": "Chapati" },
+          "price": 13,
+          "description": {
+            "fr": "Pain chapati fait maison, garni d'une omelette, fromage, persil, oignons, harissa et mayonnaise",
+            "en": "Homemade chapati bread filled with omelette, cheese, parsley, onion, harissa and mayonnaise"
+          }
+        },
+        {
+          "name": { "fr": "Mlawi", "en": "Mlawi" },
+          "price": 16,
+          "description": {
+            "fr": "Pain mlawi, harissa, mayonnaise, fromage, salade, laitue, tomates, omelette",
+            "en": "Flaky mlawi flatbread, harissa, mayonnaise, cheese, salad, lettuce, tomato, omelette"
+          }
+        },
+        {
+          "name": { "fr": "Chapati Mahdia", "en": "Chapati Mahdia" },
+          "price": 16,
+          "verify": "aucune description sur le menu imprimé — à fournir"
+        }
+      ]
+    },
+    {
+      "id": "enfants",
+      "name": { "fr": "Menu Enfant", "en": "Kids' Menu" },
+      "items": [
+        { "name": { "fr": "Nuggets", "en": "Chicken nuggets" }, "price": 10 },
+        { "name": { "fr": "Boulettes de bœuf", "en": "Beef meatballs" }, "price": 15 },
+        { "name": { "fr": "Burger poulet", "en": "Chicken burger" }, "price": 10 },
+        { "name": { "fr": "Mini chapati", "en": "Mini chapati" }, "price": 7 },
+        { "name": { "fr": "Mini tacos", "en": "Mini tacos" }, "price": 8 },
+        { "name": { "fr": "Mini wrap au poulet", "en": "Mini chicken wrap" }, "price": 8 }
+      ]
+    }
+  ]
+}

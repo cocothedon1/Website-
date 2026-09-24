@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from './Header.astro';
+import Hero from './Hero.astro';
+import Brunch from './Brunch.astro';
+import Menu from './Menu.astro';
+import About from './About.astro';
+import Gallery from './Gallery.astro';
+import Location from './Location.astro';
+import Footer from './Footer.astro';
+import MobileBar from './MobileBar.astro';
+import type { Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+---
+
+<Base lang={lang}>
+  <Header lang={lang} />
+  <main id="main">
+    <Hero lang={lang} />
+    <Brunch lang={lang} />
+    <Menu lang={lang} />
+    <About lang={lang} />
+    <Gallery lang={lang} />
+    <Location lang={lang} />
+  </main>
+  <Footer lang={lang} />
+  <MobileBar lang={lang} />
+</Base>

@@ -1,0 +1,144 @@
+---
+import menu from '../data/menu.json';
+import OliveBranch from './OliveBranch.astro';
+import { useTranslations, formatPrice, type Lang, type Localized } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+type MenuItem = {
+  name: Localized;
+  price?: number | null;
+  priceNote?: Localized;
+  prices?: { label: Localized; price: number }[];
+  description?: Localized;
+};
+type Category = { id: string; name: Localized; note?: Localized; items: MenuItem[] };
+const categories = menu.categories as Category[];
+
+const priceText = (item: MenuItem) =>
+  typeof item.price === 'number' ? formatPrice(item.price) : (item.priceNote?.[lang] ?? '');
+---
+
+<section id="menu" aria-labelledby="menu-title" class="bg-cream-light/60 pt-14 pb-16 sm:pt-20 sm:pb-24">
+  <header class="reveal mx-auto max-w-3xl px-4 text-center sm:px-6">
+    <OliveBranch class="mx-auto w-28 text-olive" />
+    <h2 id="menu-title" class="script-heading mt-2 text-[4rem] sm:text-[5rem]">{t('menu.title')}</h2>
+    <p class="mt-3 text-lg text-ink-soft italic">{t('menu.intro')}</p>
+  </header>
+
+  <!-- Sticky category chips: horizontal scroll on mobile, links jump to each category -->
+  <nav
+    id="menu-nav"
+    aria-label={t('menu.categories')}
+    class="sticky top-16 z-40 mt-8 border-y border-sand/80 bg-cream-light/95 backdrop-blur-md"
+  >
+    <ul class="no-scrollbar mx-auto flex max-w-7xl snap-x gap-2 overflow-x-auto px-4 py-3 sm:px-6 lg:gap-1.5">
+      {
+        categories.map((cat) => (
+          <li class="shrink-0 snap-start first:ms-auto last:me-auto">
+            <a
+              href={`#menu-${cat.id}`}
+              data-chip={cat.id}
+              class="block rounded-full border border-charcoal/25 px-4 py-2 text-[1rem] lg:px-3 lg:text-[0.95rem] font-semibold whitespace-nowrap transition-colors hover:border-charcoal aria-[current=true]:border-charcoal aria-[current=true]:bg-charcoal aria-[current=true]:text-cream-light"
+            >
+              {cat.name[lang]}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+
+  <div class="mx-auto max-w-5xl px-4 sm:px-6">
+    {
+      categories.map((cat) => (
+        <section id={`menu-${cat.id}`} data-category={cat.id} aria-labelledby={`menu-${cat.id}-title`} class="scroll-mt-16 pt-12 sm:pt-16">
+          <div class="reveal text-center">
+            <h3 id={`menu-${cat.id}-title`} class="script-heading text-[3.1rem] sm:text-[3.75rem]">
+              {cat.name[lang]}
+            </h3>
+            {cat.note && <p class="mx-auto mt-2 max-w-2xl text-[1.05rem] text-ink-soft italic">{cat.note[lang]}</p>}
+            <div class="mx-auto mt-4 h-px w-16 bg-olive/50" aria-hidden="true" />
+          </div>
+
+          <ul class="reveal mt-7 grid gap-x-12 gap-y-5 md:grid-cols-2">
+            {cat.items.map((item) => {
+              const desc = item.description?.[lang];
+              return (
+                <li>
+                  <div class="flex items-baseline gap-3">
+                    <span class="text-[1.2rem] leading-snug font-bold text-charcoal">{item.name[lang]}</span>
+                    {!item.prices && (
+                      <>
+                        <span class="min-w-4 flex-1 translate-y-[-0.3em] border-b-2 border-dotted border-charcoal/25" aria-hidden="true" />
+                        <span class={`shrink-0 text-[1.2rem] font-bold whitespace-nowrap ${typeof item.price === 'number' ? 'text-olive-dark' : 'text-base italic text-ink-soft'}`}>
+                          {priceText(item)}
+                        </span>
+                      </>
+                    )}
+                  </div>
+                  {desc && <p class="mt-0.5 text-[1.02rem] leading-snug text-ink-soft italic">{desc}</p>}
+                  {item.prices && (
+                    <ul class="mt-1.5 space-y-1">
+                      {item.prices.map((p) => (
+                        <li class="flex items-baseline gap-3 pl-3 text-[1.05rem]">
+                          <span class="text-ink">{p.label[lang]}</span>
+                          <span class="min-w-4 flex-1 translate-y-[-0.3em] border-b-2 border-dotted border-charcoal/20" aria-hidden="true" />
+                          <span class="shrink-0 font-bold whitespace-nowrap text-olive-dark">{formatPrice(p.price)}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      ))
+    }
+
+    <p class="mt-14 text-center text-base text-ink-soft italic">{t('menu.taxes')}</p>
+  </div>
+</section>
+
+<script>
+  const nav = document.getElementById('menu-nav');
+  const list = nav?.querySelector('ul');
+  const chips = new Map<string, HTMLAnchorElement>();
+  nav?.querySelectorAll<HTMLAnchorElement>('[data-chip]').forEach((a) => chips.set(a.dataset.chip!, a));
+
+  const setActive = (id: string) => {
+    chips.forEach((chip, key) => {
+      if (key === id) {
+        chip.setAttribute('aria-current', 'true');
+        // Keep the active chip visible inside the horizontal strip without scrolling the page
+        if (list) {
+          const left = chip.offsetLeft - (list.clientWidth - chip.offsetWidth) / 2;
+          list.scrollTo({ left, behavior: 'smooth' });
+        }
+      } else {
+        chip.removeAttribute('aria-current');
+      }
+    });
+  };
+
+  const sections = document.querySelectorAll<HTMLElement>('[data-category]');
+  if ('IntersectionObserver' in window && sections.length) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((e) => e.isIntersecting);
+        if (visible.length) {
+          const top = visible.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+          setActive((top.target as HTMLElement).dataset.category!);
+        }
+      },
+      // A thin band just below the sticky header + chips decides which category is "current"
+      { rootMargin: '-150px 0px -60% 0px' },
+    );
+    sections.forEach((s) => io.observe(s));
+  }
+</script>
