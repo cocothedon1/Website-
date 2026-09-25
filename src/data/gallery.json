@@ -1,9 +1,8 @@
 {
   "_readme": "Texte alternatif (alt) de chaque photo de src/assets/gallery/. La clé est le nom du fichier. Les photos sont affichées par ordre alphabétique du nom de fichier.",
-  "01-couscous.jpg": { "fr": "Couscous à l'agneau servi dans un plat en terre cuite", "en": "Lamb couscous served in a clay dish" },
-  "02-ojja.jpg": { "fr": "Ojja aux œufs dans sa poêle", "en": "Ojja with eggs in its pan" },
-  "03-brunch.jpg": { "fr": "Buffet du brunch à volonté", "en": "The all-you-can-eat brunch buffet" },
-  "04-grillades.jpg": { "fr": "Assiette de grillades et salades tunisiennes", "en": "Grilled meats with Tunisian salads" },
-  "05-salle.jpg": { "fr": "La salle à manger du restaurant", "en": "The restaurant dining room" },
-  "06-pizza.jpg": { "fr": "Pizza sortie du four", "en": "Pizza fresh from the oven" }
+  "01-couscous.jpg": { "fr": "Couscous à l'agneau, pois chiches et légumes, servi avec de l'harissa", "en": "Lamb couscous with chickpeas and vegetables, served with harissa" },
+  "02-ojja.jpg": { "fr": "Ojja aux œufs dans un plat en terre cuite, avec du pain", "en": "Ojja with eggs in a clay dish, served with bread" },
+  "03-salle.jpg": { "fr": "Salle à manger chaleureuse, carrelage et plantes suspendues", "en": "Warm dining room with tiles and hanging plants" },
+  "04-poisson.jpg": { "fr": "Poisson grillé entier au citron et tomates cerises", "en": "Whole grilled fish with lemon and cherry tomatoes" },
+  "05-mezze.jpg": { "fr": "Table garnie de salades et mezzés à partager", "en": "A table spread with salads and mezze to share" }
 }

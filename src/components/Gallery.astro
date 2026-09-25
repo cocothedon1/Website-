@@ -32,7 +32,7 @@ const photos = Object.entries(files)
       <h2 id="gallery-title" class="script-heading text-[4rem] sm:text-[5rem]">{t('gallery.title')}</h2>
     </div>
 
-    <ul class="reveal mt-10 grid grid-cols-2 gap-2.5 sm:gap-4 md:grid-cols-3">
+    <ul class="reveal mt-10 grid grid-cols-2 gap-2.5 sm:gap-4 md:grid-cols-4">
       {
         photos.map((p, i) => {
           // On phones (2 columns) the first photo is full width; if that leaves an odd one out, widen the last one too
@@ -45,10 +45,10 @@ const photos = Object.entries(files)
               widths={i === 0 ? [600, 900, 1200] : [320, 480, 720]}
               sizes={
                 i === 0
-                  ? '(min-width: 1152px) 760px, (min-width: 768px) 66vw, 100vw'
+                  ? '(min-width: 1152px) 570px, (min-width: 768px) 50vw, 100vw'
                   : wideLast
-                    ? '(min-width: 1152px) 370px, (min-width: 768px) 33vw, 100vw'
-                    : '(min-width: 1152px) 370px, (min-width: 768px) 33vw, 50vw'
+                    ? '(min-width: 1152px) 280px, (min-width: 768px) 25vw, 100vw'
+                    : '(min-width: 1152px) 280px, (min-width: 768px) 25vw, 50vw'
               }
               loading="lazy"
               decoding="async"
